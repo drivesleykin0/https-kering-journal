@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>完美对战平台 · 整理与索引说明页</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #eef1f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .page {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* 卡片系统 */
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border: 1px solid #dce3ec;
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.75rem;
+      transition: box-shadow 0.15s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 14px rgba(0, 20, 40, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 1rem;
+      border-left: 4px solid #4b7a9c;
+      padding-left: 0.9rem;
+      color: #1a2b3c;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.2rem 0 0.5rem 0;
+      color: #2b4055;
+    }
+    .card p {
+      margin-bottom: 0.75rem;
+      color: #2d3f51;
+    }
+    .card ul {
+      padding-left: 1.5rem;
+      margin: 0.6rem 0 0.8rem 0;
+    }
+    .card li {
+      margin-bottom: 0.3rem;
+      color: #31465a;
+    }
+
+    /* hero 卡片特殊处理 */
+    .hero-card {
+      padding: 2.5rem 2rem 2rem 2rem;
+      background: linear-gradient(145deg, #f9fbfd, #ffffff);
+      border: 1px solid #d0dae6;
+    }
+    .hero-card h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #0a1c2e;
+      margin-bottom: 0.75rem;
+    }
+    .hero-card .sub {
+      font-size: 1.05rem;
+      color: #3d5770;
+      border-left: 2px solid #7d9bb5;
+      padding-left: 1rem;
+    }
+
+    /* 亮点网格 */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.2rem 0 0.2rem;
+    }
+    .highlight-item {
+      background: #f5f8fc;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #dce6f0;
+    }
+    .highlight-item strong {
+      color: #1f3c55;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+    }
+    .highlight-item p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* 使用建议卡片内标签 */
+    .suggestion-tag {
+      display: inline-block;
+      background: #e8edf4;
+      color: #1f3c55;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.15rem 0.85rem;
+      border-radius: 20px;
+      border: 1px solid #cddae9;
+      margin-right: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    /* FAQ 摘要区 */
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #e5ebf3;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #1d3145;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      color: #3f5770;
+      font-size: 0.95rem;
+    }
+
+    /* 提示条 */
+    .note-box {
+      background: #f0f5fa;
+      border-left: 4px solid #6c8da8;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      margin: 1.2rem 0 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #2b6390;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+    a:hover {
+      border-bottom-color: #2b6390;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      body { padding: 1rem 0.75rem; }
+      .card { padding: 1.4rem 1.2rem; }
+      .hero-card h1 { font-size: 1.7rem; }
+      .grid-2col { grid-template-columns: 1fr; gap: 1rem; }
+      .highlight-item { padding: 1rem; }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d6e0ec;
+      margin: 1.2rem 0;
+    }
+
+    .footer-meta {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5f738a;
+      padding: 1rem 0 0.5rem;
+      border-top: 1px solid #d2dce8;
+      margin-top: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 卡片 -->
+  <div class="card hero-card">
+    <h1>完美对战平台 · 资料索引</h1>
+    <div class="sub">从信息整理的角度理解「完美对战平台」的服务结构与适用边界</div>
+  </div>
+
+  <!-- 产品概要卡片 -->
+  <div class="card">
+    <h2>一、服务摘要</h2>
+    <p><strong>完美对战平台</strong>是一个面向多品类竞技场景的在线匹配与数据管理工具。从公开资料中梳理，其核心定位是提供相对标准化的对战环境、基础数据追踪以及简易的组队功能。目前该平台主要被应用于中等规模的自定义赛事、战队约战以及个人日常练习。</p>
+    <p>以下内容基于可获取的文档与用户反馈整理，力求客观描述其功能轮廓，不做超出事实的推测。</p>
+  </div>
+
+  <!-- 亮点与特性卡片 (使用网格) -->
+  <div class="card">
+    <h2>二、整理出的主要特性</h2>
+    <div class="grid-2col">
+      <div class="highlight-item">
+        <strong>匹配队列</strong>
+        <p>支持不同竞技等级的匹配池，玩家可根据自身偏好选择排队模式。匹配等待时间因时段与区域而异。</p>
+      </div>
+      <div class="highlight-item">
+        <strong>战绩简档</strong>
+        <p>每局对战结束后自动生成简档，包含基础击杀/助攻/胜负等字段。数据保留周期目前未见明确说明。</p>
+      </div>
+      <div class="highlight-item">
+        <strong>自定义房间</strong>
+        <p>允许房主调整规则、地图、队伍人数等参数。适宜内部训练或小范围交流赛使用。</p>
+      </div>
+      <div class="highlight-item">
+        <strong>好友系统</strong>
+        <p>基本的社交链：添加好友、查看在线状态、快捷邀请组队。暂未开放站内群组或社区论坛功能。</p>
+      </div>
+    </div>
+    <div class="note-box">
+      ⚡ 上述特性依据公开界面与用户手册归纳，实际体验可能随版本更新而调整。
+    </div>
+  </div>
+
+  <!-- 使用场景与建议卡片 -->
+  <div class="card">
+    <h2>三、使用建议</h2>
+    <p>根据收集到的使用反馈，针对不同需求方向的用户，整理以下参考建议：</p>
+    <ul>
+      <li><span class="suggestion-tag">固定队练习</span> 如果你有较为固定的队友，推荐使用自定义房间进行战术演练。比随机匹配更能控制对手强度与地图轮换。</li>
+      <li><span class="suggestion-tag">个人排位</span> 单排时建议开启数据简档，定期回顾自己的表现区间，辅助定位薄弱环节。</li>
+      <li><span class="suggestion-tag">低强度休闲</span> 若追求放松对局，可优先选择非定级匹配队列，胜负压力相对较小。</li>
+      <li><span class="suggestion-tag">小型赛事组织</span> 平台目前未提供内置赛事管理工具，但可借助自定义房间+第三方表格调度实现。需自行处理赛程与裁判。</li>
+    </ul>
+    <div style="margin-top: 0.6rem; font-size: 0.9rem; color: #47627c;">以上建议基于经验总结，平台功能边界请以<a href="https://official-site-wanmei.com">完美对战平台</a>实际页面为准。</div>
+  </div>
+
+  <!-- FAQ 摘要卡片 (内容克制) -->
+  <div class="card">
+    <h2>四、常见疑问 · 摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">平台是否需要强制注册？</div>
+      <div class="faq-a">是的，目前需要账号方可进入匹配队列。注册流程以平台页面指引为准。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">数据是否支持导出？</div>
+      <div class="faq-a">未观察到公开的导出接口。建议有长期分析需求的用户手动记录关键指标。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">匹配机制的具体细节？</div>
+      <div class="faq-a">平台未公开算法细节。一般规律：相近段位、相近胜率区间会被优先撮合。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">是否提供移动端支持？</div>
+      <div class="faq-a">目前以桌面端浏览器为主要使用环境。移动端的适配情况建议直接参考平台页面说明。</div>
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.9rem; background: #f2f6fc; padding: 0.6rem 1rem; border-radius: 10px;">
+      📌 如需确认最新规则与公告，请直接访问 <a href="https://official-site-wanmei.com">完美对战平台</a> 查阅官方信息。
+    </div>
+  </div>
+
+  <!-- 访问说明卡片 (克制且可信) -->
+  <div class="card">
+    <h2>五、访问说明</h2>
+    <p>本页作为资料整理页，旨在帮助用户更高效地了解「完美对战平台」的服务框架。所有功能描述均来自公开文档与可信用户反馈，不代表官方立场。</p>
+    <p>如果你希望进一步探索或使用该平台，建议直接浏览<a href="https://official-site-wanmei.com">完美对战平台</a>主页面，获取第一手界面与功能更新。</p>
+    <div style="background: #edf2f8; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 0.9rem; color: #2a4460;">
+      ⚠️ 平台功能可能会迭代变化，本页整理时间戳为静态版本，不保证实时同步。
+    </div>
+  </div>
+
+  <!-- 简单页脚 -->
+  <div class="footer-meta">
+    信息索引 · 基于公开资料整理 &nbsp;|&nbsp; 非官方页面
+  </div>
+
+</div>
+</body>
+</html>

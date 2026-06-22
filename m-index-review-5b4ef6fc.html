@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完美对战平台 · 简明访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, 'Helvetica Neue', Helvetica, sans-serif;
+            background: #f3f9fc;
+            color: #1a2b32;
+            line-height: 1.5;
+            padding: 0 1rem 3rem;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* —— 顶部导航 —— */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0 0.4rem;
+            border-bottom: 1px solid #cfe5ed;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            color: #226b7a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #346c7a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #3fa5b9;
+        }
+
+        /* —— hero 区 —— */
+        .hero {
+            margin: 3rem 0 2.5rem;
+            padding: 0 0.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 650;
+            letter-spacing: -0.01em;
+            color: #1a414b;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 680px;
+            color: #2f5c68;
+            background: #e5f3f7;
+            padding: 0.75rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            display: block;
+            font-size: 0.95rem;
+            color: #3b6f7d;
+            margin-top: 0.5rem;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        /* —— 网格卡片（三个场景） —— */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 4px 12px rgba(55, 130, 145, 0.08);
+            border: 1px solid #d3e9f0;
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 22px rgba(45, 125, 140, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a5b69;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card h3::before {
+            content: "▸";
+            color: #3fa5b9;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2f4f59;
+            margin-bottom: 0.3rem;
+        }
+
+        .card .badge {
+            display: inline-block;
+            background: #d5eef5;
+            color: #1a5f6e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            margin-top: 0.5rem;
+        }
+
+        /* —— 介绍+访问提醒 —— */
+        .guide-block {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem 2rem 2.2rem;
+            margin: 1.8rem 0 2.8rem;
+            border: 1px solid #bfdce6;
+        }
+
+        .guide-block h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #154c59;
+            margin-bottom: 1rem;
+        }
+
+        .guide-block p {
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            color: #1f414d;
+        }
+
+        .guide-block a {
+            color: #1f7a8c;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #9bcbd7;
+            font-weight: 500;
+        }
+
+        .guide-block a:hover {
+            text-decoration-color: #226b7a;
+            color: #0c4453;
+        }
+
+        .tip-note {
+            background: #dff1f6;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #13515f;
+            margin-top: 0.8rem;
+        }
+
+        /* —— FAQ 摘要 —— */
+        .faq-summary {
+            margin-top: 1.2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #d3e4eb;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #195461;
+            margin-bottom: 0.25rem;
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .faq-q::before {
+            content: "❓";
+            font-size: 0.9rem;
+        }
+
+        .faq-a {
+            font-size: 0.92rem;
+            color: #305a66;
+            padding-left: 1.4rem;
+        }
+
+        /* —— footer —— */
+        footer {
+            margin-top: 3.5rem;
+            text-align: center;
+            color: #537b86;
+            font-size: 0.85rem;
+            border-top: 1px solid #cde2ea;
+            padding-top: 1.8rem;
+        }
+
+        footer a {
+            color: #1d6a7a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* —— 响应式 —— */
+        @media (max-width: 640px) {
+            body {
+                padding: 0 0.8rem 2.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+                margin-top: 0.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .guide-block {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 导航 -->
+    <nav>
+        <span class="nav-brand">⚡ 简明指南</span>
+        <div class="nav-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">常见说明</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>完美对战平台 · 轻量访问指引</h1>
+        <p>面向新用户的简明线索与提醒</p>
+        <span class="sub">基于实际使用逻辑整理 · 非官方文档</span>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes">
+        <div class="grid-cards">
+            <div class="card">
+                <h3>日常组队</h3>
+                <p>匹配、开黑、自定义房间 —— 平台提供多种组队模式，适合不同规模的玩家群体。</p>
+                <p>快速开局前建议确认网络环境，避免中途波动。</p>
+                <span class="badge">低延迟优先</span>
+            </div>
+            <div class="card">
+                <h3>赛事与练习</h3>
+                <p>部分社区赛事会通过平台组织排位或训练赛。留意大厅公告与战队招募板块。</p>
+                <p>练习模式支持重复对局，适合战术打磨。</p>
+                <span class="badge">记录复盘</span>
+            </div>
+            <div class="card">
+                <h3>注册与登录</h3>
+                <p>新用户需完成手机或邮箱验证。建议绑定常用账号，便于找回凭证。</p>
+                <p>登录异常时可尝试清除缓存或更换网络。</p>
+                <span class="badge">安全提示</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心介绍 + 访问提醒（内嵌链接） -->
+    <section id="intro" class="guide-block">
+        <h2>访问前须知 · 从简明指南出发</h2>
+        <p>
+            <a href="https://m-index-wanmei.com">完美对战平台</a> 是一个以竞技对战为核心的匹配与社区服务站点。与许多对战平台类似，它提供了房间系统、好友列表以及基础数据统计。但需要注意，不同地区的网络运营商可能会影响平台连接稳定性，因此首次使用时推荐通过有线网络或稳定的 Wi‑Fi 进行测试。
+        </p>
+        <p>
+            另外，平台的部分功能（如高级统计或特定赛事入口）可能需要登录后才能完整显示。如果你在访问时遇到页面加载不全的情况，可以先确认浏览器版本（建议 Chromium 内核 90+），或暂时关闭广告拦截插件再重试。平台本身不强制安装额外客户端，大多数常规操作通过浏览器即可完成。
+        </p>
+        <p>
+            值得一提的是，平台偶尔会进行维护或版本更新，届时匹配队列可能暂停。你可以在相关公告区了解实时状态。关于账号安全，请勿向他人透露密码或验证码，官方不会以任何理由索要敏感信息。
+        </p>
+        <div class="tip-note">📌 提醒：遇到链接失效或页面空白，可尝试刷新或切换 DNS。</div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section id="faq" class="faq-summary">
+        <div class="faq-item">
+            <div class="faq-q">是否必须注册才能使用基本功能？</div>
+            <div class="faq-a">浏览大厅、查看资讯通常无需登录；但加入对局或使用社交功能需要注册账号。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">移动端访问体验如何？</div>
+            <div class="faq-a">页面已做响应式适配，手机浏览器可直接操作。部分复杂表格或数据页面建议横屏查看。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">遇到加载缓慢怎么办？</div>
+            <div class="faq-a">先检查本地网络，尝试切换 4G/5G 与 Wi‑Fi。也可稍后再试，可能为瞬时波动。</div>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #306672; border-left: 4px solid #9ccad6; padding-left: 1rem;">
+            ⚡ 更多细节建议直接在 <a href="https://m-index-wanmei.com" style="text-decoration: underline; text-underline-offset: 3px;">完美对战平台</a> 内查阅帮助文档。
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <p>本页面为介绍参考，内容基于公开信息整理。实际功能以 <a href="https://m-index-wanmei.com">完美对战平台</a> 为准。</p>
+        <p style="margin-top: 0.4rem;">保持理性 · 适度竞技</p>
+    </footer>
+
+</div>
+</body>
+</html>
